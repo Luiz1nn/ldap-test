@@ -1,6 +1,7 @@
 import fastify from 'fastify'
 import { ldapAuth } from './lib/ldap'
-import { LdapOptions, SearchOptions } from './@types'
+import { LdapOptions } from './@types'
+import { SearchOptions } from 'ldapjs'
 
 export const app = fastify()
 
