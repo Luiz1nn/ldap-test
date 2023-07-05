@@ -1,7 +1,7 @@
-import { ldapAuth } from './ldap'
+import { app } from './app'
 
-try {
-  ldapAuth()
-} catch (error) {
-  console.error(error)
-}
+app
+  .listen({
+    port: 3333,
+  })
+  .then(() => console.log('Server Running'))

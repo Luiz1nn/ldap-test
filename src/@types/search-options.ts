@@ -1,5 +1,7 @@
+import { Filter } from 'ldapjs'
+
 export type SearchOptions = {
-  filter: string
-  scope: 'sub' | 'base' | 'one' | undefined
-  attributes: Array<string>
+  filter?: string | Filter
+  scope?: 'sub' | 'base' | 'one'
+  attributes?: string | string[]
 }

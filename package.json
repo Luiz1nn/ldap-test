@@ -7,6 +7,7 @@
     "start": "tsx watch src/server.ts"
   },
   "dependencies": {
+    "fastify": "^4.19.2",
     "ldapjs": "^3.0.3"
   },
   "devDependencies": {
