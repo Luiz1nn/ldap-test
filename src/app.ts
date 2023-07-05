@@ -1,7 +1,6 @@
 import fastify from 'fastify'
 import { ldapAuth } from './lib/ldap'
-import { SearchOptions } from 'ldapjs'
-import { LdapOptions } from './@types/ldap-options'
+import { LdapOptions, SearchOptions } from './@types'
 
 export const app = fastify()
 
@@ -17,4 +16,8 @@ const searchOptions: SearchOptions = {
   attributes: ['cn', 'mail'], // Retorna os atributos 'cn' e 'mail'
 }
 
-ldapAuth(ldapOptions, searchOptions)
+try {
+  ldapAuth(ldapOptions, searchOptions)
+} catch (error) {
+  console.log(error)
+}

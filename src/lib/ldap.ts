@@ -1,6 +1,5 @@
-import ldap from 'ldapjs'
-import { LdapOptions } from '../@types/ldap-options'
-import { SearchOptions } from '../@types/search-options'
+import ldap, { SearchOptions } from 'ldapjs'
+import { LdapOptions } from '../@types'
 
 export function ldapAuth(
   ldapOptions: LdapOptions,
@@ -10,6 +9,7 @@ export function ldapAuth(
 
   client.bind(ldapOptions.bindDN, ldapOptions.bindCredentials, (error) => {
     if (error) {
+      console.error(`Erro na autenticação: ${error}`)
       throw new Error(`Erro na autenticação: ${error}`)
     }
 
